@@ -74,6 +74,78 @@ activities = {
         "schedule": "Fridays, 3:30 PM - 4:30 PM",
         "max_participants": 18,
         "participants": []
+    },
+    "Soccer Club": {
+        "description": "Practice soccer skills and play team matches",
+        "schedule": "Tuesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 22,
+        "participants": []
+    },
+    "Volleyball Club": {
+        "description": "Learn volleyball techniques and play friendly games",
+        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
+        "max_participants": 18,
+        "participants": []
+    },
+    "Photography Club": {
+        "description": "Learn photography techniques and create visual stories",
+        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 15,
+        "participants": []
+    },
+    "Music Club": {
+        "description": "Explore music through listening, practice, and performances",
+        "schedule": "Fridays, 3:30 PM - 5:00 PM",
+        "max_participants": 20,
+        "participants": []
+    },
+    "Math Club": {
+        "description": "Solve challenging problems and explore mathematical ideas",
+        "schedule": "Mondays, 3:30 PM - 4:30 PM",
+        "max_participants": 16,
+        "participants": []
+    },
+    "Creative Writing Club": {
+        "description": "Develop writing skills and share original stories and poems",
+        "schedule": "Tuesdays, 3:30 PM - 4:30 PM",
+        "max_participants": 16,
+        "participants": []
+    },
+    "Tennis Club": {
+        "description": "Practice tennis skills and play friendly matches",
+        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 16,
+        "participants": []
+    },
+    "Swimming Club": {
+        "description": "Improve swimming technique and build water confidence",
+        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
+        "max_participants": 20,
+        "participants": []
+    },
+    "Ceramics Club": {
+        "description": "Learn hand-building and pottery techniques",
+        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 15,
+        "participants": []
+    },
+    "Film Club": {
+        "description": "Explore filmmaking and discuss visual storytelling",
+        "schedule": "Fridays, 3:30 PM - 5:00 PM",
+        "max_participants": 16,
+        "participants": []
+    },
+    "Robotics Club": {
+        "description": "Design, build, and program robots to solve challenges",
+        "schedule": "Mondays, 3:30 PM - 5:00 PM",
+        "max_participants": 18,
+        "participants": []
+    },
+    "History Club": {
+        "description": "Investigate historical events, people, and civilizations",
+        "schedule": "Thursdays, 3:30 PM - 4:30 PM",
+        "max_participants": 16,
+        "participants": []
     }
 }
 
@@ -99,9 +171,9 @@ def signup_for_activity(activity_name: str, email: str):
     activity = activities[activity_name]
 
    # Validate student is not already signed up
-    if email in activity["participants"]:
-        raise HTTPException(status_code=400, detail="Student is already signed up for this activity")
+   if email in activity["participants"]:
+     raise HTTPException(status_code=400, detail="Student is already signed up")
 
    # Add student
-    activity["participants"].append(email)
-    return {"message": f"Signed up {email} for {activity_name}"}
+   activity["participants"].append(email)
+   return {"message": f"Signed up {email} for {activity_name}"}
